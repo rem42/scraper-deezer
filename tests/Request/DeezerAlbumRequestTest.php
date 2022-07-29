@@ -6,6 +6,7 @@ use Scraper\ScraperDeezer\Model\Album;
 use Scraper\ScraperDeezer\Model\Artist;
 use Scraper\ScraperDeezer\Model\Contributor;
 use Scraper\ScraperDeezer\Request\DeezerAlbumRequest;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @internal
@@ -27,5 +28,12 @@ class DeezerAlbumRequestTest extends AbtractRequestTest
         $this->assertIsArray($result->contributors);
         $this->assertInstanceOf(Contributor::class, $result->contributors[0]);
         $this->assertInstanceOf(Artist::class, $result->artist);
+    }
+
+    public function requestCallback(string $method, string $url, array $options): ResponseInterface
+    {
+        $this->assertEquals('GET', $method);
+        $this->assertEquals('https://api.deezer.com/album/103248', $url);
+        return parent::requestCallback($method, $url, $options);
     }
 }
