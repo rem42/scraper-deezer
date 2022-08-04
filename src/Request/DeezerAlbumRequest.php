@@ -2,11 +2,9 @@
 
 namespace Scraper\ScraperDeezer\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Scraper;
 
-/**
- * @Scraper(path="album/{id}")
- */
+#[Scraper(path: 'album/{id}')]
 class DeezerAlbumRequest extends DeezerRequest
 {
     protected int $id;

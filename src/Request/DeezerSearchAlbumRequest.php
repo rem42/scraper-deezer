@@ -2,11 +2,9 @@
 
 namespace Scraper\ScraperDeezer\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Scraper;
 
-/**
- * @Scraper(path="search/album")
- */
+#[Scraper(path: 'search/album')]
 class DeezerSearchAlbumRequest extends DeezerRequest
 {
     public function setQuery(string $query): self
