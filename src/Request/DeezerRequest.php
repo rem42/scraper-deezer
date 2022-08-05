@@ -26,7 +26,7 @@ abstract class DeezerRequest extends ScraperRequest implements RequestQuery
         return array_merge(
             [
                 'access_token' => $this->accessToken,
-                'output'       => 'json',
+                'output' => 'json',
             ],
             $this->parameters
         );
