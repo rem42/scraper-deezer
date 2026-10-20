@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperDeezer\Model;
 
@@ -14,6 +16,7 @@ class Album extends AlbumSearch
     public ?bool $available = null;
     public ?int $explicitContentLyrics = null;
     public ?int $explicitContentCover = null;
+
     /** @var array<int, Contributor> */
     public array $contributors = [];
     public ?Tracks $tracks = null;
@@ -21,6 +24,7 @@ class Album extends AlbumSearch
     public function addContributors(Contributor $contributor): self
     {
         $this->contributors[] = $contributor;
+
         return $this;
     }
 
@@ -29,6 +33,7 @@ class Album extends AlbumSearch
         if ($dateTime = \DateTime::createFromFormat('Y-m-d', $releaseDate)) {
             $this->releaseDate = $dateTime;
         }
+
         return $this;
     }
 }

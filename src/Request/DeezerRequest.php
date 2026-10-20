@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperDeezer\Request;
 
@@ -15,7 +17,7 @@ abstract class DeezerRequest extends ScraperRequest implements RequestQuery
     protected array $parameters = [];
 
     public function __construct(
-        protected string $accessToken
+        protected string $accessToken,
     ) {}
 
     /**

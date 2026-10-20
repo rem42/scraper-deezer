@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperDeezer\Request;
 
@@ -17,6 +19,7 @@ class DeezerAlbumRequest extends DeezerRequest
     public function setId(int $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 }

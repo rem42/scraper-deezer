@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Scraper\ScraperDeezer\Tests\Request;
 
@@ -11,7 +13,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @internal
  */
-class DeezerSearchAlbumRequestTest extends AbtractRequestTest
+class DeezerSearchAlbumRequestTest extends AbstractRequestTestCase
 {
     public function testDeezerSearchAlbumRequest(): void
     {
@@ -37,6 +39,7 @@ class DeezerSearchAlbumRequestTest extends AbtractRequestTest
         $this->assertArrayHasKey('query', $options);
         $this->assertArrayHasKey('q', $options['query']);
         $this->assertEquals('eminem', $options['query']['q']);
+
         return parent::requestCallback($method, $url, $options);
     }
 }
